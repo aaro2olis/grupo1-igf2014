@@ -1,0 +1,168 @@
+
+body { 
+     background-color:white;
+     font-family:helvetica;
+}
+
+/************************************
+ESTRUCTURA
+************************************/
+
+#wrapper{
+    position:absolute; 
+    top:3%;
+    left:3%;
+    width:94%;
+    height:auto;
+    background-color:white;
+    margin:auto;
+}
+header{
+    position:relative;
+    min-height:150px;
+    /*texto*/
+	text-align:center;
+    padding:5px;
+	font-family:helvetica;
+	font-size:30px;
+	font-weight:bold;
+	color:#DF7401 /*#993300*/;
+	
+	/*background-color: #FFD700; /*rgba(255, 255, 255, 0.2);*/
+	box-shadow: 0px 0px 10px 10px rgba(255,255,255, 0.2);
+    
+    /*fondo*/
+    background-repeat: no-repeat;
+	background-size: 100% 100%; /*w3c*/
+	-webkit-background-size: 100% 100%; /*safari y chrome*/
+	-moz-background-size: 100% 100%;/*mozilla*/
+	-o-background-size: 100% 100%;/* opera*/
+    background-image:url('../img/bancoUES.png');
+}
+ /*contiene el logo*/
+#logo{
+    display: block;
+    float: left;
+    margin: 0px 6px 0px;
+    width: 180px;
+    height: 220px;
+	z-index:8888;
+	/*fondo*/
+	-webkit-background-size: 100% 100%; /*safari y chrome*/
+	-moz-background-size: 100% 100%;/*mozilla*/
+	-o-background-size: 100% 100%;/* opera*/
+	background-image:url("../img/logo.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%; /*w3c*/
+ }
+ nav{ 
+   clear:left;
+    margin:auto;
+    margin: 1%
+}
+ /**************************
+ contiene todo el cuerpo 
+ **************************/
+section{ 
+    position:relative;
+    /*background-color:lightblue;*/
+    min-height:400px;
+    overflow: hidden;
+}
+
+#divname{
+    color:white;
+    background-color:#B13336;
+    font-size:22px;
+    text-align:center;
+    min-height:35px;
+    font-family:helvetica;
+    /*sombras del div*/
+	-webkit-box-shadow: 2px 2px 5px #999; /*safari*/
+	-moz-box-shadow: 2px 2px 5px #999; /*mozilla*/
+	box-shadow: 2px 2px 5px #999; /*todos los demas*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#999999')"; /* IE 8 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#999999'); 
+ }
+
+#divname hr{
+         alignment-adjust:central; 
+         line-height:10px;
+         background-color:yellow;
+         color:yellow;
+}
+
+/*menu izquierdo*/
+aside{ 
+	color:#B13336; /*#993300*/;
+	float: left;
+	width: 19%;
+	min-height:240px;
+ 	border:  none;
+	margin: 25px 5px 5px 5px;
+	margin-right: 25px;
+}
+article, aside{
+    margin: 1%; /*  10px ÷ 538px = .018587361 */
+     background-color:#F2F2F2;
+    /*sombras del div*/
+	-webkit-box-shadow: 2px 2px 5px #999; /*safari*/
+	-moz-box-shadow: 2px 2px 5px #999; /*mozilla*/
+	box-shadow: 2px 2px 5px #999; /*todos los demas*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#999999')"; /* IE 8 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#999999'); /* IE 5.5 - 7 */  
+}
+article {
+  float: left;
+  width:76%; 
+  height:auto!important;   /* 340px ÷ 538px = .63197026 */
+  min-height:240px;   
+}
+footer{
+    position:relative;
+	height:120px; /*altura del footer*/
+	margin-top:5%;
+	background-color:#8E3031;
+    text-align:right;
+    overflow: hidden;
+}
+
+footer p, a{
+    display: inline-block;
+	*display: inline;     /* for IE7*/
+	text-align:right;
+	margin-right:10px;
+    
+}
+
+footer ul {
+      background-color:#8E3031;
+      min-height: 65px;
+      list-style: none;
+      margin: 0;
+      padding: 0px 2em 0em;
+      overflow:hidden; /*para que los link no salgan de la lista*/
+}
+        
+footer li {
+      float: right;
+      padding: 0px; /*Este padding es para la separacion en cada submenu*/
+}
+
+footer ul li  img{
+       max-height:70px;
+       max-width:70px;
+}        
+
+footer li a {
+      display: block;
+      line-height: 35px;
+      margin: 0px;
+      text-align: center;
+      /*transicion*/
+      -webkit-transition: all 0.3s ease-out; /*safari y chrome*/
+      transition: all 0.3s ease-out;/*w3c*/
+      -o-transition:all 0.3s ease-out;  /* Opera */
+      -moz-transition:all 0.3s ease-out;  /* Mozilla Firefox */
+      -ms-transition:all 0.3s ease-out;   /* Internet Explorer */
+}

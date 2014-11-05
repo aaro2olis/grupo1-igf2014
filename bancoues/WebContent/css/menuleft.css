@@ -1,0 +1,44 @@
+
+/* todos los ul hijos de aside*/
+aside ul{
+	/*texto*/
+   	list-style: none;
+	display: block;
+	padding: 2px 0 2px 0;
+    overflow:hidden;
+}
+
+aside li {
+  
+    font-size:18px;
+	font-weight:bold;
+	font-family:Arial;
+	padding: 7px 15px 7px 15px;
+    display: block;
+	text-decoration: none;
+    
+    -webkit-transition: all 0.3s ease-out; /*safari y chrome*/
+	transition: all 0.3s ease-out;/*w3c*/
+	-o-transition:all 0.3s ease-out;  /* Opera */
+	-moz-transition:all 0.3s ease-out;  /* Mozilla Firefox */
+	-ms-transition:all 0.3s ease-out;   /* Internet Explorer */
+}
+aside ul li a{
+/*transicion*/
+    color:#B13336;
+	
+ }
+
+
+aside ul li a:link{text-decoration:none; }
+
+aside ul li:hover {
+	background:  #B13336 url("../img/images-menu/hover_sub.png") center left no-repeat;
+	padding: 7px 10px 7px 10%;
+    
+}
+aside ul li:hover > a{
+      color:white!important;
+ }
+
+  
