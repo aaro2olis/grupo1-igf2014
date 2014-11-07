@@ -23,7 +23,7 @@ public class Concha {
 if(c.isPais((short)14))
 System.out.println("si esta");
 else 
-	System.out.println("no esta");	
+	System.out.println("no esta lo q busca");	
 	}
 
 }
