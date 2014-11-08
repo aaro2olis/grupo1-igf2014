@@ -94,7 +94,7 @@ input:focus {
         font-family:Verdana,Helvetica;
         font-weight:bold;
         color:white;
-        background:#0B0B3B;
+        background-color:tomato;
         border:0px;
         min-width:80px;
         height:30px;
