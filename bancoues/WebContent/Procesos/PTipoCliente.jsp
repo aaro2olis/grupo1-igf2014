@@ -26,8 +26,8 @@ if(estado){
 System.out.println(id);
 System.out.println(nombre);
 System.out.println(data);
-Beans.getControl().AgregarTipoCliente(new Tipocliente(id,nombre,data));
-mensaje ="El cliente fue agregado con exito";
+mensaje=Beans.getControl().AgregarTipoCliente(new Tipocliente(id,nombre,data));
+
 }
 
 /*int agno = Integer.parseInt(request.getParameter("anyo")) ;
