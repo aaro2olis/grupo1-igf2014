@@ -18,4 +18,16 @@ Beans.getBase().guardar(tipo);
 
 
 }
+public String AgregarCliente(Cliente cliente){
+if(Beans.getConsultas().isCliente(cliente.getIdCliente())){
+return "ese identificador  cliente ya existe";}
+else 
+{
+Beans.getBase().guardar(cliente);	
+}
+	
+	return "se agrego correctamente en nuevo  cliente";
+
+
+}
 }

@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -63,7 +65,60 @@ public class ConsultasDAO{
 		else
 			return true;
 	}
+
+	public boolean isCliente(int var) {
+	Cliente tipo=null;
+		try {
+			iniciaOperacion() ;
+			tipo=(Cliente)sesion.get(Cliente.class, var) ;
+			
+		} catch (HibernateException he) {
+		
+		//	manejaExcepcion(he) ;
 	
+		} finally {
+			sesion.close() ;
+		}
+		if(tipo==null)
+			return false;
+		else
+			return true;
+	}
+	public Tipocliente getTipoCliente(String var) {
+		Tipocliente tipo=null;
+		try {
+			iniciaOperacion() ;
+			tipo=(Tipocliente)sesion.get(Tipocliente.class, var) ;
+			
+		} catch (HibernateException he) {
+		
+		//	manejaExcepcion(he) ;
+	
+		} finally {
+			sesion.close() ;
+		}
+
+			return tipo;
+	
+	}
+	
+	public List getListaTipoCliente() {
+		List  tipo=null;
+		try {
+			iniciaOperacion() ;
+			tipo=sesion.createCriteria(Tipocliente.class).list() ;
+			
+		} catch (HibernateException he) {
+		
+		//	manejaExcepcion(he) ;
+	
+		} finally {
+			sesion.close() ;
+		}
+		System.out.println(tipo.size());
+
+		return tipo;
+	}
 	
 	
 }
