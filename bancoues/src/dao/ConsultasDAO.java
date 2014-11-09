@@ -5,7 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import dominio.Pais;
+import dominio.*;
 
 import utilidades.HibernateUtil;
 
@@ -40,6 +40,25 @@ public class ConsultasDAO{
 			sesion.close() ;
 		}
 		if(pais==null)
+			return false;
+		else
+			return true;
+	}
+	
+	public boolean isTipoCliente(String var) {
+		Tipocliente tipo=null;
+		try {
+			iniciaOperacion() ;
+			tipo=(Tipocliente)sesion.get(Tipocliente.class, var) ;
+			
+		} catch (HibernateException he) {
+		
+		//	manejaExcepcion(he) ;
+	
+		} finally {
+			sesion.close() ;
+		}
+		if(tipo==null)
 			return false;
 		else
 			return true;

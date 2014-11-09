@@ -54,10 +54,10 @@
 								
 							</div>
     				 		<ul>
-                               <li><a href="#">Opcion1</a></li>
-                               <li><a href="#">Opcion2</a></li>
-                               <li><a href="#">Opcion3</a></li>
-                               <li><a href="#">Opcion4</a></li>
+                               <li><a href="#">Ver Estado de tarjeta</a></li>
+                               <li><a href="#">Ver Tansacciones </a></li>
+                               <li><a href="#">Ver Datos Personales </a></li>
+                              
                 			</ul>
     				 </aside>
     				 <article>
@@ -90,7 +90,7 @@
 						</tr>
 						<tr>
 							<td><label for="fechana">Fecha nacimiento</label></td>
-							<td><input type="text" size="20" name="fechana" /></td>
+							
 						</tr>
 						<tr>
 							<td><label for="email">E-mail </label></td>	

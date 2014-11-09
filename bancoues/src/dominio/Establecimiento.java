@@ -30,7 +30,7 @@ public class Establecimiento  implements java.io.Serializable {
      private Date fechIngreso;
      private String activo;
      private Set clientetarjetaestados = new HashSet(0);
-
+  
     public Establecimiento() {
     }
 
