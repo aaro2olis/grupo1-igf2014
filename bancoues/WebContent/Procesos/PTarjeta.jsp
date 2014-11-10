@@ -12,15 +12,13 @@
 boolean estado=true;
 int id=Integer.parseInt(request.getParameter("id"));
 String nombre=request.getParameter("nombre");
+BigDecimal min=new BigDecimal(request.getParameter("limMin"));
+BigDecimal max=new BigDecimal(request.getParameter("limMax"));
 String fecha=request.getParameter("fecha");
-String apellido=request.getParameter("apellido");
-String email=request.getParameter("email");
-String direccion=request.getParameter("direccion");
-String tipo=request.getParameter("tipo");
+String nombree=request.getParameter("nEmisor");
+BigDecimal tasa=new BigDecimal(request.getParameter("tasa"));
 String telefono=request.getParameter("telefono");
-System.out.println(id);
-System.out.println(nombre);
-System.out.println(tipo);
+
 
 SimpleDateFormat simple= new SimpleDateFormat("dd/MM/yyyy"); 
 Date data = null;
@@ -32,20 +30,18 @@ mensaje="fecha no valida";
 //break;
 }  
 if(estado){
-System.out.println(id);
-System.out.println(nombre);
+System.out.println(min);
+System.out.println(max);
 System.out.println(data);
-Cliente cliente=new Cliente();
-cliente.setNombClient(nombre);
-cliente.setApellidoClient(apellido);
-cliente.setFechaNacimiento(data);
-cliente.setEmail(email);
-cliente.setDireccion(direccion);
-cliente.setIdCliente(id);
-cliente.setTelefono(telefono);
-cliente.setTipocliente(Beans.getConsultas().getTipoCliente(tipo));
-
-mensaje=Beans.getControl().AgregarCliente(cliente);
+Tarjetacredito tar=new Tarjetacredito();
+tar.setIdTarjetaCredito(id);
+tar.setFechaIngreso(data);
+tar.setLimiteCreditoMax(max);
+tar.setNombreTarjeta(nombre);
+tar.setLimiteCreditoMin(min);
+tar.setTasaInteres(tasa);
+tar.setNombreEmisor(nombree);
+mensaje=Beans.getControl().AgregarTarjeta(tar);
 
 }
 

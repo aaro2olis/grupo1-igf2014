@@ -65,6 +65,24 @@ public class ConsultasDAO{
 		else
 			return true;
 	}
+	public boolean isTarjeta(int var) {
+		Tarjetacredito tar=null;
+		try {
+			iniciaOperacion() ;
+			tar=(Tarjetacredito)sesion.get(Tarjetacredito.class, var) ;
+			
+		} catch (HibernateException he) {
+		
+		//	manejaExcepcion(he) ;
+	
+		} finally {
+			sesion.close() ;
+		}
+		if(tar==null)
+			return false;
+		else
+			return true;
+	}
 
 	public boolean isCliente(int var) {
 	Cliente tipo=null;

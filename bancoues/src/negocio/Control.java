@@ -26,6 +26,17 @@ Beans.getBase().guardar(cliente);
 	return "se agrego correctamente en nuevo  cliente";
 
 }
+
+public String AgregarTarjeta(Tarjetacredito tarjeta){
+if(Beans.getConsultas().isTarjeta(tarjeta.getIdTarjetaCredito())){
+return "ese identificador  cliente ya existe";}
+else 
+{
+Beans.getBase().guardar(tarjeta);	
+}	
+	return "se agrego correctamente en nuevo  cliente";
+
+}
 ////////////////////////////////////////////////
 public String AgregarConcepto(Concepto concepto){
 if(Beans.getConsultas().isCliente(concepto.getIdConcepto())){
