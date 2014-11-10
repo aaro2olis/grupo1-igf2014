@@ -5,14 +5,43 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Aqui es la vista del cliente</title>
-</head>
-<body>
-        <h1>Vista Cliente</h1>
-        
+  <title>Banco Ues - Cliente</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="css/menuleft.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="css/menuup.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="css/element.css" media="screen" />
+  </head>
+<!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><body>
+  		<div id="wrapper">
+      		<header>
+    			<div id="logo"></div>
+    			<h1>&nbsp;</h1>    		
+            	<nav>
+        			<div id="cssmenu">
+        			</div>
+        			</nav>
+    		</header>
+			<section>
+			 <article style="margin-left:15%;">
+					 	<div id="divname"> 
+    				 		 Vista Cliente
+					    </div>
+      
         <p><a href="index.jsp">Ver Datos del Personales</a></p>
          <p><a href="index.jsp">Ver Transaciones </a></p>
         
         <p><a href="j_spring_security_logout">Salir</a></p>
-</body>
+	</article>
+		</section>
+			<footer>
+				<br />
+				<ul>
+					<li><a href='index.html'><img src="img/help1.png" onmouseover="this.src='img/help2.png';" onmouseout="this.src='img/help1.png';" name="Ayuda" /></a></li>
+					<li><a href='index.html'><img src="img/email1.png" onmouseover="this.src='img/email2.png';" onmouseout="this.src='img/email1.png';" name="Ayuda"/></a></li>
+				</ul>		
+			</footer>
+		</div>
+	</body>
 </html>

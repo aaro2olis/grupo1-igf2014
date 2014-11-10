@@ -107,38 +107,71 @@ function fecha()
 
 //-->
 </script>
+<title>Agregar Cliente </title>
+<link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="../css/menuleft.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="../css/menuup.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="../css/element.css" media="screen" />
+  </head>
+<!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><body>
+  		<div id="wrapper">
+      		<header>
+    			<div id="logo"></div>
+    			<h1>&nbsp;</h1>    		
+            	<nav>
+        			<div id="cssmenu">
+        			</div>
+        			</nav>
+    		</header>
+			<section>
+			 <article style="margin-left:15%;">
+					 	<div id="divname"> 
+					 	Cliente
+					 	</div>
+					<form method="post" name="frmcliente" action="../Procesos/PCliente.jsp">
+					
+					
+					
+						<label for="id">IDCliente</label> <input type="text" name="id" /></br> <label>Nombres:</label>
+						<input type="text" name="nombre" /></br> <label>Apellidos:</label> <input
+							type="text" name="apellido" /></br> <label>Direccion: </label> <input
+							type="text" name="direccion" /></br> <label>telefono</label> <input
+							type="text" name="telefono" /></br> <label>fecha nacimiento</label><input
+							type="date" name="fecha" /></br> <label>Email</label> <input type="text"
+							name="email" /></br>
 
-<form method="post" name="frmcliente" action="../Procesos/PCliente.jsp">
 
-	<p>Cliente</p>
-
-	<label for="id">IDCliente</label> <input type="text" name="id" /></br> <label>Nombres:</label>
-	<input type="text" name="nombre" /></br> <label>Apellidos:</label> <input
-		type="text" name="apellido" /></br> <label>Direccion: </label> <input
-		type="text" name="direccion" /></br> <label>telefono</label> <input
-		type="text" name="telefono" /></br> <label>fecha nacimiento</label><input
-		type="date" name="fecha" /></br> <label>Email</label> <input type="text"
-		name="email" /></br>
-
-
-	<%
-		List<Tipocliente> tipos = Beans.getConsultas()
-				.getListaTipoCliente();
-		System.out.println(tipos.size());
-	%>
-
-	<p>Tipo
-	<p>
-		<select name='tipo'>
-			<%
-				for (int i = 0; i < tipos.size(); i++) {
-					System.out.println(i);
-					out.println("<option value=" + tipos.get(i).getIdTipoCliente()
-							+ "> " + tipos.get(i).getDTipoCliente() + " </option>");
-
-				} // fin while 
-				out.println("</SELECT>");
-			%>
-			<input type="button" value="Guardar" class="boton" onclick="validar()"/>
-			<input type="reset" value="Restablecer" class="boton" />
-</form>
+							<%
+								List<Tipocliente> tipos = Beans.getConsultas()
+										.getListaTipoCliente();
+								System.out.println(tipos.size());
+							%>
+						
+							<p>Tipo
+							<p>
+								<select name='tipo'>
+									<%
+										for (int i = 0; i < tipos.size(); i++) {
+											System.out.println(i);
+											out.println("<option value=" + tipos.get(i).getIdTipoCliente()
+													+ "> " + tipos.get(i).getDTipoCliente() + " </option>");
+						
+										} // fin while 
+										out.println("</SELECT>");
+									%>
+									<input type="button" value="Guardar" class="boton" onclick="validar()"/>
+									<input type="reset" value="Restablecer" class="boton" />
+						</form>
+						</article>
+			</section>
+			<footer>
+				<br />
+				<ul>
+					<li><a href='index.html'><img src="img/help1.png" onmouseover="this.src='img/help2.png';" onmouseout="this.src='img/help1.png';" name="Ayuda" /></a></li>
+					<li><a href='index.html'><img src="img/email1.png" onmouseover="this.src='img/email2.png';" onmouseout="this.src='img/email1.png';" name="Ayuda"/></a></li>
+				</ul>		
+			</footer>
+		</div>
+	</body>

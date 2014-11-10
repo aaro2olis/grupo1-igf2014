@@ -1,4 +1,8 @@
-<script type="text/javascript">
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="css/menuleft.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="css/menuup.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="css/element.css" media="screen" />
+  <script type="text/javascript">
 <!--
 function validar() // java script function is created
 {

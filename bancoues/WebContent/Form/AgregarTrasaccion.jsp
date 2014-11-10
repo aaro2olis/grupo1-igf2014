@@ -1,4 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="css/menuleft.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="css/menuup.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="css/element.css" media="screen" />
+  <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
      <%@ page import="dao.*" %>
  <%@ page import="dominio.*" %>

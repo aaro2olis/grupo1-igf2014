@@ -39,17 +39,47 @@ function Nombres() {
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Agregar Cliente Tarjeta Estado</title>
-</head>
-<body>
- <form action="" name="f">
- 
- Agregar Cliente Tarjeta Estado<br>
- 
- Fecha limite de pago <input type="text" name="fecha"><br>
- Balance Actual <input type="text"  name="balance"><br>
- 
- <input type="button" value="Guardar" class="boton" onclick="validar()">
- <input type="reset" value="Restablecer" class="boton" >
- </form>
-</body>
+ <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="../css/menuleft.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="../css/menuup.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="../css/element.css" media="screen" />
+  </head>
+<!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><body>
+  		<div id="wrapper">
+      		<header>
+    			<div id="logo"></div>
+    			<h1>&nbsp;</h1>    		
+            	<nav>
+        			<div id="cssmenu">
+        			</div>
+        			</nav>
+    		</header>
+			<section>
+			 <article style="margin-left:15%;">
+					 	<div id="divname"> 
+					 	 Agregar Cliente Tarjeta Estado
+					 	  </div>
+						 <form action="" name="f">
+						 
+						<br>
+						 
+						 Fecha limite de pago <input type="text" name="fecha"><br>
+						 Balance Actual <input type="text"  name="balance"><br>
+						 
+						 <input type="button" value="Guardar" class="boton" onclick="validar()">
+						 <input type="reset" value="Restablecer" class="boton" >
+						 </form>
+			</article>
+			</section>
+			<footer>
+				<br />
+				<ul>
+					<li><a href='index.html'><img src="img/help1.png" onmouseover="this.src='img/help2.png';" onmouseout="this.src='img/help1.png';" name="Ayuda" /></a></li>
+					<li><a href='index.html'><img src="img/email1.png" onmouseover="this.src='img/email2.png';" onmouseout="this.src='img/email1.png';" name="Ayuda"/></a></li>
+				</ul>		
+			</footer>
+		</div>
+	</body>
 </html>
