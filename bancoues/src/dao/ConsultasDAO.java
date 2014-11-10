@@ -137,6 +137,218 @@ public class ConsultasDAO{
 
 		return tipo;
 	}
+	public List getListaCliente() {
+		List  tipo=null;
+		try {
+			iniciaOperacion() ;
+			tipo=sesion.createCriteria(Cliente.class).list() ;
+			
+		} catch (HibernateException he) {
+		
+		//	manejaExcepcion(he) ;
 	
+		} finally {
+			sesion.close() ;
+		}
+		System.out.println(tipo.size());
+
+		return tipo;
+	}
+	
+	
+	public List getListaPais() {
+		List  Lpais=null;
+		try {
+			iniciaOperacion() ;
+			Lpais=sesion.createCriteria(Pais.class).list() ;
+			
+		} catch (HibernateException he) {
+		
+		//	manejaExcepcion(he) ;
+	
+		} finally {
+			sesion.close() ;
+		}
+		System.out.println(Lpais.size());
+
+		return Lpais;
+	}
+	
+	
+	
+	/////////////////////////////////////////////////////////////////////////////
+	
+	
+	
+	public List getListaIdCliente() {
+		List  Lid=null;
+		try {
+			iniciaOperacion() ;
+			 Lid=sesion.createCriteria(Cliente.class).list() ;
+			
+		} catch (HibernateException he) {
+		
+		//	manejaExcepcion(he) ;
+	
+		} finally {
+			sesion.close() ;
+		}
+		System.out.println(Lid.size());
+
+		return  Lid;
+	}
+	
+	
+////////////////////////////////////////////////////////////
+	public boolean isConcepto(Integer var) {
+		Concepto concepto=null;
+		try {
+			iniciaOperacion() ;
+			concepto=(Concepto)sesion.get(Concepto.class, var) ;
+			
+		} catch (HibernateException he) {
+		
+			manejaExcepcion(he) ;
+			throw he ;
+		} finally {
+			sesion.close() ;
+		}
+		if(concepto==null)
+			return false;
+		else
+			return true;
+	}
+	
+	public List getListaConcepto() {
+		List  Lconcepto=null;
+		try {
+			iniciaOperacion() ;
+			Lconcepto=sesion.createCriteria(Concepto.class).list() ;
+			
+		} catch (HibernateException he) {
+		
+		//	manejaExcepcion(he) ;
+	
+		} finally {
+			sesion.close() ;
+		}
+		System.out.println(Lconcepto.size());
+
+		return Lconcepto;
+	}
+
+	///////////////////////////////////////////////////////////////
+	
+	public boolean isEstablecimiento(short var) {
+		Establecimiento establecimiento=null;
+		try {
+			iniciaOperacion() ;
+			establecimiento=(Establecimiento)sesion.get(Establecimiento.class, var) ;
+			
+		} catch (HibernateException he) {
+		
+			manejaExcepcion(he) ;
+			throw he ;
+		} finally {
+			sesion.close() ;
+		}
+		if(establecimiento==null)
+			return false;
+		else
+			return true;
+	}
+	
+	public List getListaEstablecimiento() {
+		List  Lestablecimiento=null;
+		try {
+			iniciaOperacion() ;
+			Lestablecimiento=sesion.createCriteria(Establecimiento.class).list() ;
+			
+		} catch (HibernateException he) {
+		
+		//	manejaExcepcion(he) ;
+	
+		} finally {
+			sesion.close() ;
+		}
+		System.out.println(Lestablecimiento.size());
+
+		return Lestablecimiento;
+	}
+	
+	/////////////////////////////////////////////////////////////////////////
+	public boolean isTarjetaCredito(Integer var){
+		Tarjetacredito tarjetaCredito=null;
+		try {
+			iniciaOperacion() ;
+			tarjetaCredito=(Tarjetacredito)sesion.get(Tarjetacredito.class, var) ;
+			
+		} catch (HibernateException he) {
+		
+			manejaExcepcion(he) ;
+			throw he ;
+		} finally {
+			sesion.close() ;
+		}
+		if(tarjetaCredito==null)
+			return false;
+		else
+			return true;
+	}
+	
+	public List getListaTarjetaCredito() {
+		List  LtarjetaCredito=null;
+		try {
+			iniciaOperacion() ;
+			LtarjetaCredito=sesion.createCriteria(Tarjetacredito.class).list() ;
+			
+		} catch (HibernateException he) {
+		
+		//	manejaExcepcion(he) ;
+	
+		} finally {
+			sesion.close() ;
+		}
+		System.out.println(LtarjetaCredito.size());
+
+		return LtarjetaCredito;
+	}
+//////////////////////////////////////////////////////////////
+	public List getListaClienteTarjetaEstado() {
+		List  LtarClienteTarjetaEstado=null;
+		try {
+			iniciaOperacion() ;
+			LtarClienteTarjetaEstado=sesion.createCriteria(Clientetarjetaestado.class).list() ;
+			
+		} catch (HibernateException he) {
+		
+		//	manejaExcepcion(he) ;
+	
+		} finally {
+			sesion.close() ;
+		}
+		System.out.println(LtarClienteTarjetaEstado.size());
+
+		return LtarClienteTarjetaEstado;
+	}
+	
+	/////////////////////////////////////
+	public List getListaClienteTarjetaEstadoId() {
+		List  LtarClienteTarjetaEstadoId=null;
+		try {
+			iniciaOperacion() ;
+			LtarClienteTarjetaEstadoId=sesion.createCriteria(ClientetarjetaestadoId.class).list() ;
+			
+		} catch (HibernateException he) {
+		
+		//	manejaExcepcion(he) ;
+	
+		} finally {
+			sesion.close() ;
+		}
+		System.out.println(LtarClienteTarjetaEstadoId.size());
+
+		return LtarClienteTarjetaEstadoId;
+	}
 	
 }

@@ -61,6 +61,6 @@ function Nombres() {
 <label>Fecha de Ingreso:</label> <input type="date" name="fecha" /></br>
 <label>Nombre del emisor:</label> <input type="text" name="nEmisor" size=45 onkeypress="Nombres()"/></br>
 <label>Tasa de interes:</label> <input type="text" name="tasa" size=10 onkeypress="Numeros()"/></br> 
-<input type="button" value="Guardar" class="boton" onclick="validar()" /> 
+<input type="submit" value="Guardar" class="boton" onclick="validar()" /> 
 <input type="reset" value="Restablecer" class="boton" />
 </form>
