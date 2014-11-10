@@ -1,5 +1,5 @@
 
-<form action="AgregaConceptoP" method="post" name="AgregaConcepto">
+<form action="../Procesos/AgregarConceptoP.jsp" method="post" name="AgregaConcepto">
 <label>ID del concepto Concepto:</label><input type="text" name="id"><br>
 <label>Descripcion del Concepto:<br><input type="text" size=45 name="descripcion"></i><br>
 <br>
