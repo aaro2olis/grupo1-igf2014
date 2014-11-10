@@ -24,8 +24,8 @@
 <td>perfil</td> 
 </tr> 
 <% 
-List<Cliente> lista = Beans.getConsultas().getListaCliente();
-
+List<Cliente> lista = Beans.getConsultas().getListaCliente(); 
+String url="PCliente.jsp?id=";
 for (int i=0;i<lista.size();i++) 
 { %>
 <tr> 
@@ -35,7 +35,8 @@ for (int i=0;i<lista.size();i++)
 <td><%=lista.get(i).getDireccion() %></td>
 <td><%=lista.get(i).getTelefono() %></td> 
 <td><%=lista.get(i).getEmail() %></td> 
-
+<td><%=lista.get(i).getEmail() %></td> 
+<td><a href="<%=url+lista.get(i).getIdCliente() %>">portafolio</a> </td>
 </tr>
 <%} 
 %>
