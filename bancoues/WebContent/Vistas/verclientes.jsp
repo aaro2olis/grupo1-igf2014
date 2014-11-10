@@ -19,7 +19,6 @@
 <td>nombre</td> 
 <td>apellido</td> 
 <td>direccion</td> 
-<td>telefono</td> 
 <td>email</td> 
 <td>perfil</td> 
 </tr> 
