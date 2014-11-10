@@ -64,15 +64,21 @@ function Nombres() {
 <title>Agregar Transaccion</title>
 </head>
 <body>
-<form action="" name="f">
-Agregar Trasaccion <br>
+<form action="../Procesos/AgregarTransaccionP.jsp" name="f" method="post">
+Agregar Trasaccion <br><br>
 
-Id Transaccion <input type="text" name="idtransaccion"><br>
-Fecha de transaccion <input type="text" name="fechatrans"><br>
-Fecha Aplicada <input type="text" name="fechaplic"><br>
-Monto de transaccion <input type="text" name="monto"><br>
-Cargo <input type="text" name="cargo"><br>
-Abono <input type="text" name="abono"> <br>
+<label>Id Transaccion:</label><input type="text" name="idtransaccion"><br>
+<label>Fecha de transaccion</label> <input type="date" name="fechat"><br>
+<label>Fecha Aplicada</label> <input type="date" name="fechap"><br>
+<label>Monto de transaccion</label> <input type="text" name="monto"><br>
+<label>idconcepto</label> <input type="text" name="concepto"><br>
+<label>idcliente</label> <input type="text" name="cliente"><br>
+<label>idpais</label> <input type="text" name="pais"><br>
+<label>idtarjetacredito</label> <input type="text" name="tarjeta"><br>
+<label>fecha limite de pago</label> <input type="date" name="fechal"><br>
+<label>Tipo de transaccion: </label><br>
+	<input type="radio" name="tipo" value="c">Cargo<br>
+    <input type="radio" name="tipo" value="a">Abono<br>
 <input type="button" value="Guardar"  class="boton" onclick="validar()"> 
 <input type="reset" value="Restablecer" class="boton">
 </form>
