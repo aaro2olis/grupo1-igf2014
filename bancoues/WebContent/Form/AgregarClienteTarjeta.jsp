@@ -17,8 +17,12 @@
  Fecha de emision <input type="text" name="fecha"> <br>
  Limite de credito <input type="text" name="limite"> <br>
  Puntos tarjeta <input type="text" name="puntos"><br>
- 
- <input type="submit" name="Guardar"  value="Guardar">
+ <select>
+<option value="1">idtipocliente1
+<option value="2">idtipocliente2
+ </select><br>
+ <input type="submit" class="boton"  value="Guardar">
+ <input type="reset" class="boton" value="Restablecer">
  </form>
 </body>
 </html>
