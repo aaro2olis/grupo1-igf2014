@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@ page import="java.util.*" %> 
     <%@ page import="java.text.*" %> 
+    <%@ page import="java.lang.*" %>
 <%@ page import="dao.*" %> 
 <%@ page import="dominio.*" %>
 <%@ page import="negocio.*" %>
