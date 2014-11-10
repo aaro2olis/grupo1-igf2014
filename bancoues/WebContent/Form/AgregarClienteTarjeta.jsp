@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
  <%@ page import="dao.*" %>
  <%@ page import="dominio.*" %>
- <%@ page import="negocio.*" %>
+ <%@ page import="negocio.*" %> <%@ page import="java.util.*" %>
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -57,14 +57,43 @@ function Nombres() {
 <body>
  <form action="" name="f">
  Agregar cliente Tarjeta <br>
- IdClienteTarjeta <input type="text" name="id"> <br>
- Fecha de emision <input type="text" name="fecha"> <br>
+Cliente <%
+		List<Cliente> clientes = Beans.getConsultas().getListaCliente();
+	
+	%>
+
+	
+		<select name='cliente'>
+			<%
+				for (int i = 0; i < clientes.size(); i++) {
+					System.out.println(i);
+					out.println("<option value=" + clientes.get(i).getIdCliente()
+							+ "> " + clientes.get(i).getNombClient()+" " +clientes.get(i).getApellidoClient()+ " </option>");
+
+				} // fin while 
+				out.println("</SELECT>");
+			%><br>
+			
+			Cliente <%
+		List<Tarjetacredito> tarjetas = Beans.getConsultas().getListaTarjetaCredito();
+	
+	%>
+
+	
+		<select name='tarjeta'>
+			<%
+				for (int i = 0; i < clientes.size(); i++) {
+					System.out.println(i);
+					out.println("<option value=" + tarjetas.get(i).getIdTarjetaCredito()
+							+ "> " +tarjetas.get(i).getNombreTarjeta()+ " </option>");
+
+				} // fin while 
+				out.println("</SELECT>");
+			%><br>
+			fecha de emision <input type="text" name="fecha"> <br>
  Limite de credito <input type="text" name="limite"> <br>
  Puntos tarjeta <input type="text" name="puntos"><br>
- <select name="selec">
-<option value="1">idtipocliente1
-<option value="2">idtipocliente2
- </select><br>
+
  <input type="button" class="boton"  value="Guardar" onclick="validar()">
  <input type="reset" class="boton" value="Restablecer">
  </form>
