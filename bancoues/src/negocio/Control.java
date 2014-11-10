@@ -51,7 +51,7 @@ Beans.getBase().guardar(concepto);
 /////////////////////////////////////////////////////
 public String AgregarPais(Pais pais){
 if(Beans.getConsultas().isCliente(pais.getIdPais())){
-return "ese identificador  concepto ya existe";}
+return "ese identificador pais ya existe";}
 else 
 {
 Beans.getBase().guardar(pais);	
