@@ -368,4 +368,22 @@ Cliente tipo=null;
 		return LtarClienteTarjetaEstadoId;
 	}
 	
+	//////////////////////////////////////////////////////////////
+	public List getListaClienteTarjeta() {
+		List  LtarClienteTarjeta=null;
+		try {
+			iniciaOperacion() ;
+			LtarClienteTarjeta=sesion.createCriteria(Clientetarjeta.class).list() ;
+			
+		} catch (HibernateException he) {
+		
+		//	manejaExcepcion(he) ;
+	
+		} finally {
+			sesion.close() ;
+		}
+		System.out.println(LtarClienteTarjeta.size());
+
+		return LtarClienteTarjeta;
+	}
 }
