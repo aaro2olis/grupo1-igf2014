@@ -82,4 +82,15 @@ Beans.getBase().guardar(tarjetaCredito);
 
 }
 /////////////////////////////////////////////////
+public String AgregarTransaccion(Transaccion transaccion){
+if(Beans.getConsultas().isCliente(transaccion.getIdTransaccion())){
+return "ese identificador  concepto ya existe";}
+else 
+{
+Beans.getBase().guardar(transaccion);	
+}	
+	return "se agrego correctamente una nueva transaccion";
+
+}
+//////////////////////////////////////////////////
 }
