@@ -119,6 +119,23 @@ public class ConsultasDAO{
 			return tipo;
 	
 	}
+	public Cliente getCliente(int id) {
+Cliente tipo=null;
+		try {
+			iniciaOperacion() ;
+			tipo=(Cliente)sesion.get(Cliente.class, id) ;
+			
+		} catch (HibernateException he) {
+		
+		//	manejaExcepcion(he) ;
+	
+		} finally {
+			sesion.close() ;
+		}
+
+			return tipo;
+	
+	}
 	
 	public List getListaTipoCliente() {
 		List  tipo=null;
