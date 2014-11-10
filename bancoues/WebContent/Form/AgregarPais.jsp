@@ -24,7 +24,7 @@ function Numeros() {
 	}
 //-->
 </script>
-<form action="" method="post" name="AgregaPais">
+<form action="../Procesos/AgregarPaisP.jsp" method="post" name="AgregaPais">
 <label>ID del Pais     :</label><input type="text" name="id" onkeypress="Numeros()"><br>
 <label>Nombre del Pais :</label><input type="text" name="nombre"><br>
 <input type="button" value="Guardar" class="boton"  onclick="validar()"/> 
