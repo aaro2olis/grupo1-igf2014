@@ -34,7 +34,7 @@ for (int i=0;i<lista.size();i++)
 <td><%=lista.get(i).getPuntosTarjeta() %></td> 
 
 
-<td><a href="<%=url+lista.get(i).getId() %>">portafolio</a> </td>
+<!--<td><a href="<%=url+lista.get(i).getId() %>">portafolio</a> </td>-->
 </tr>
 <%} 
 %>
