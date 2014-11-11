@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Vista de clientes</title>
 </head>
 <body>
 <table border="1"> 
@@ -19,8 +19,10 @@
 <td>nombre</td> 
 <td>apellido</td> 
 <td>direccion</td> 
+<td>telefono</td> 
 <td>email</td> 
-<td>perfil</td> 
+<td>fecha de nacimiento</td>
+
 </tr> 
 <% 
 List<Cliente> lista = Beans.getConsultas().getListaCliente(); 
@@ -34,7 +36,8 @@ for (int i=0;i<lista.size();i++)
 <td><%=lista.get(i).getDireccion() %></td>
 <td><%=lista.get(i).getTelefono() %></td> 
 <td><%=lista.get(i).getEmail() %></td> 
-<td><%=lista.get(i).getEmail() %></td> 
+<td><%=lista.get(i).getFechaNacimiento() %></td> 
+
 <td><a href="<%=url+lista.get(i).getIdCliente() %>">portafolio</a> </td>
 </tr>
 <%} 
