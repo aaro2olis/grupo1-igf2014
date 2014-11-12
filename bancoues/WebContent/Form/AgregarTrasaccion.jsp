@@ -61,12 +61,12 @@ function Nombres() {
 <title>Agregar Transaccion</title>
 </head>
 <body>
-<form action="" name="f">
+<form action="../Procesos/AgregarTransaccionP.jsp" name="f" method="post">
 Agregar Trasaccion <br>
 
 Id Transaccion <input type="text" name="idtransaccion"><br>
-Fecha de transaccion <input type="date" name="fechatrans"><br>
-Fecha Aplicada <input type="date" name="fechaplic"><br>
+Fecha de transaccion <input type="date" name="fechat"><br>
+Fecha Aplicada <input type="date" name="fechap"><br>
 Monto de transaccion <input type="text" name="monto"><br>
  <%
 		List<Concepto> Lconcepto = Beans.getConsultas().getListaConcepto();
