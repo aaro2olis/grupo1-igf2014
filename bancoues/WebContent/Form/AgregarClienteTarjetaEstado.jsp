@@ -65,7 +65,7 @@ function Nombres() {
 						 
 						<br>
 						 
-						 Fecha limite de pago <input type="text" name="fecha"><br>
+						 Fecha limite de pago <input type="date" name="fecha"><br>
 						 Balance Actual <input type="text"  name="balance"><br>
 						 
 						 <input type="button" value="Guardar" class="boton" onclick="validar()">
