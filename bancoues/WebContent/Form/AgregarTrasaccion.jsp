@@ -7,7 +7,13 @@
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	 <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
+	  <link rel="stylesheet" type="text/css" href="../css/menuleft.css" media="screen" />
+	  <link rel="stylesheet" type="text/css" href="../css/menuup.css" media="screen" />
+	  <link rel="stylesheet" type="text/css" href="../css/element.css" media="screen" />
+	<title>Banco Ues -agregar transaccion</title>
 <script type="text/javascript">
 <!--
 function validar() // java script function is created
@@ -58,88 +64,142 @@ function Nombres() {
 //-->
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Agregar Transaccion</title>
 </head>
-<body>
-<form action="../Procesos/AgregarTransaccionP.jsp" name="f" method="post">
-Agregar Trasaccion <br>
 
-Id Transaccion <input type="text" name="idtransaccion"><br>
-Fecha de transaccion <input type="date" name="fechat"><br>
-Fecha Aplicada <input type="date" name="fechap"><br>
-Monto de transaccion <input type="text" name="monto"><br>
- <%
-		List<Concepto> Lconcepto = Beans.getConsultas().getListaConcepto();
-		System.out.println( Lconcepto.size());
-	%>
-idConcepto :<select name='idConcepto'>
-			<%
-				for (int i = 0; i <Lconcepto.size(); i++) {
-					System.out.println(i);
-					out.println("<option value=" +Lconcepto.get(i).getIdConcepto() + "> " +  Lconcepto.get(0).getDescripcion()  + " </option>");
+<!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><body>
+  		<div id="wrapper">
+      		<header>
+    			<div id="logo"></div>
+    			<h1>&nbsp;</h1>    		
+            	<nav>
+        			<div id="cssmenu">
+        			</div>
+        			</nav>
+    		</header>
+			<section>
+			<article style="margin-left:15%;">
+					 	<div id="divname"> 
+					 	Agregar trasaccion
+					 	</div>
 
-				} // fin while 
-				out.println("</SELECT>");
-			%> <br>
-			<%
-		List<Tarjetacredito> LtarjetaCredito = Beans.getConsultas().getListaTarjetaCredito();
-		System.out.println( LtarjetaCredito.size());
-	%>
-idTarjetaCredito :<select name='idTarjetadeCredito'>
-			<%
-				for (int i = 0; i <LtarjetaCredito.size(); i++) {
-					System.out.println(i);
-					out.println("<option value=" +LtarjetaCredito.get(i).getIdTarjetaCredito() + "> " +  LtarjetaCredito.get(i).getNombreTarjeta()  + " </option>");
-
-				} // fin while 
-				out.println("</SELECT>");
-			%> <br>
-			 <%
-		List<Cliente> Lcliente = Beans.getConsultas().getListaCliente();
-		System.out.println( Lcliente.size());
-	%>
- 
- IdClienteTarjeta :<select name='idCliente'>
-			<%
-				for (int i = 0; i < Lcliente.size(); i++) {
-					System.out.println(i);
-					out.println("<option value=" + Lcliente.get(i).getIdCliente() + "> " +  Lcliente.get(i).getIdCliente()  + " </option>");
-
-				} // fin while 
-				out.println("</SELECT>");
-			%> <br>
-					 <%
-		List<ClientetarjetaestadoId> LclientetarjetaEstadoId = Beans.getConsultas().getListaClienteTarjetaEstadoId();
-		System.out.println( LclientetarjetaEstadoId.size());
-	%>
-			
-fechaLimitePago = <select name='idClientetarjetaEstId'>
-			<%
-				for (int i = 0; i < LclientetarjetaEstadoId.size(); i++) {
-					System.out.println(i);
-					out.println("<option value=" + LclientetarjetaEstadoId.get(i).getFechaLimtePago() + "> " +  LclientetarjetaEstadoId.get(i).getFechaLimtePago()  + " </option>");
-
-				} // fin while 
-				out.println("</SELECT>");
-			%> <br>
-			 <%
-		List<Pais> LPais = Beans.getConsultas().getListaPais();
-		System.out.println( LPais.size());
-	%>
-IPais :<select name='idPais'>
-<%
-				for (int i = 0; i <  LPais.size(); i++) {
-					System.out.println(i);
-					out.println("<option value=" +  LPais.get(i).getIdPais() + "> " +   LPais.get(i).getNombrePais() + " </option>");
-
-				} // fin while 
-				out.println("</SELECT>");
-			%> <br>
-<label>Tipo de transaccion: </label><br>
-	<input type="radio" name="tipo" value="c">Cargo<br>
-    <input type="radio" name="tipo" value="a">Abono<br>
-<input type="button" value="Guardar"  class="boton" onclick="validar()"> 
-<input type="reset" value="Restablecer" class="boton">
-</form>
+						<form action="../Procesos/AgregarTransaccionP.jsp" name="f" method="post">
+						<table>
+  							<tr>
+								<td><label>Id Transaccion</label></td>
+								<td><input type="text" name="idtransaccion"><br>
+							</tr>
+							<tr>
+								<td><label>Fecha de transaccion</label></td>
+								<td> <input type="date" name="fechat"><br>
+							</tr>
+							<tr>
+								<td><label>Fecha Aplicada</label></td>
+								<td> <input type="date" name="fechap"><br>
+							</tr>
+							<tr>
+								<td><label>Monto de transaccion</label></td>
+								<td> <input type="text" name="monto"><br>
+							</tr><%
+									List<Concepto> Lconcepto = Beans.getConsultas().getListaConcepto();
+									System.out.println( Lconcepto.size());
+								%>
+								<td><label>idConcepto :</label></td>
+								<td> <select name='idConcepto'>
+									<%
+										for (int i = 0; i <Lconcepto.size(); i++) {
+											System.out.println(i);
+											out.println("<option value=" +Lconcepto.get(i).getIdConcepto() + "> " +  Lconcepto.get(0).getDescripcion()  + " </option>");
+						
+										} // fin while 
+										out.println("</SELECT>");
+									%></td>
+							</tr>
+							<tr>
+									<%
+										List<Tarjetacredito> LtarjetaCredito = Beans.getConsultas().getListaTarjetaCredito();
+										System.out.println( LtarjetaCredito.size());
+									%>
+								<td><label>idTarjetaCredito :</label></td>
+								<td><select name='idTarjetadeCredito'>
+									<%
+										for (int i = 0; i <LtarjetaCredito.size(); i++) {
+											System.out.println(i);
+											out.println("<option value=" +LtarjetaCredito.get(i).getIdTarjetaCredito() + "> " +  LtarjetaCredito.get(i).getNombreTarjeta()  + " </option>");
+						
+										} // fin while 
+										out.println("</SELECT>");
+									%> </td>
+							</tr>
+							<tr>
+									<%
+										List<Cliente> Lcliente = Beans.getConsultas().getListaCliente();
+										System.out.println( Lcliente.size());
+									%>
+						 		<td><label>IdClienteTarjeta :</label></td>
+								<td><select name='idCliente'>
+									<%
+										for (int i = 0; i < Lcliente.size(); i++) {
+											System.out.println(i);
+											out.println("<option value=" + Lcliente.get(i).getIdCliente() + "> " +  Lcliente.get(i).getIdCliente()  + " </option>");
+						
+										} // fin while 
+										out.println("</SELECT>");
+									%></td>
+							</tr>
+							<tr>	<%
+										List<ClientetarjetaestadoId> LclientetarjetaEstadoId = Beans.getConsultas().getListaClienteTarjetaEstadoId();
+										System.out.println( LclientetarjetaEstadoId.size());
+									%>
+									
+								<td><label>fechaLimitePago</label></td>
+								<td><select name='idClientetarjetaEstId'>
+									<%
+										for (int i = 0; i < LclientetarjetaEstadoId.size(); i++) {
+											System.out.println(i);
+											out.println("<option value=" + LclientetarjetaEstadoId.get(i).getFechaLimtePago() + "> " +  LclientetarjetaEstadoId.get(i).getFechaLimtePago()  + " </option>");
+						
+										} // fin while 
+										out.println("</SELECT>");
+									%> </td>
+							</tr>
+							<tr>
+									 <%
+										List<Pais> LPais = Beans.getConsultas().getListaPais();
+										System.out.println( LPais.size());
+									%>
+								<td><label>IPais :</label></td>
+								<td><select name='idPais'>
+									<%
+										for (int i = 0; i <  LPais.size(); i++) {
+											System.out.println(i);
+											out.println("<option value=" +  LPais.get(i).getIdPais() + "> " +   LPais.get(i).getNombrePais() + " </option>");
+						
+										} // fin while 
+										out.println("</SELECT>");
+									%> </td>
+							</tr>
+							<tr>
+								<td><label>Tipo de transaccion: </label></td>
+								<td><input type="radio" name="tipo" value="c">Cargo<br>
+						    		<input type="radio" name="tipo" value="a">Abono</td>
+							</tr>
+							<tr>
+								<td><input type="button" value="Guardar"  class="boton" onclick="validar()"> </td>
+								<td><input type="reset" value="Restablecer" class="boton"></td>
+							</tr>
+						</table>
+						</form>
+			</article>
+		</section>
+		<footer>
+			<br />
+		<ul>
+					<li><a href='index.html'><img src="../img/help1.png" onmouseover="this.src='../img/help2.png';" onmouseout="this.src='../img/help1.png';" name="Ayuda" /></a></li>
+					<li><a href='index.html'><img src="../img/email1.png" onmouseover="this.src='../img/email2.png';" onmouseout="this.src='../img/email1.png';" name="Ayuda"/></a></li>
+				</ul>	
+		</footer>
+	</div>
 </body>
 </html>
