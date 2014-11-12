@@ -38,7 +38,7 @@ function Nombres() {
 //-->
 </script>
 
-<form method="post" name ="p"action="../Procesos/PTipoCliente.jsp">
+<form method="post" name ="p"action="../Procesos/AgregarTipoClienteP.jsp">
 
 	<p>tipo Cliente</p>
 

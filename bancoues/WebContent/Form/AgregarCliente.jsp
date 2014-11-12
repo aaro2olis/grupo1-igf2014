@@ -130,7 +130,7 @@ function fecha()
 					 	<div id="divname"> 
 					 	Cliente
 					 	</div>
-					<form method="post" name="frmcliente" action="../Procesos/PCliente.jsp">
+					<form method="post" name="frmcliente" action="../Procesos/AgregarClienteP.jsp">
 					
 					
 					

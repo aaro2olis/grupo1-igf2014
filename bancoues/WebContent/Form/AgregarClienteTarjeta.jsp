@@ -57,7 +57,7 @@ function Nombres() {
 <title>Agregar Cliente Tarjeta</title>
 </head>
 <body>
- <form action="" name="f">
+ <form action="../Procesos/AgregarClienteTarjetaP.jsp" name="f" method="post">
  Agregar cliente Tarjeta <br>
  <%
 		List<Cliente> Lcliente = Beans.getConsultas().getListaCliente();

@@ -42,7 +42,7 @@ function Nombres() {
 <title>Agregar Cliente Tarjeta Estado</title>
 </head>
 <body>
- <form action="" name="f">
+ <form action="../Procesos/AgregarClienteEstadoP.jsp" name="f" method="post">
  
  Agregar Cliente Tarjeta Estado<br>
  <%
@@ -77,7 +77,7 @@ IdClienteTarjeta :<select name='idCliente'>
 
  Fecha limite de pago <input type="date" name="fecha"><br>
  Balance Actual <input type="text"  name="balance"><br>
- 
+ Numero de referencia <input type="text"  name="refe"><br>
  <input type="button" value="Guardar" class="boton" onclick="validar()">
  <input type="reset" value="Restablecer" class="boton" >
  </form>

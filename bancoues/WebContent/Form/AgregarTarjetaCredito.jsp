@@ -56,7 +56,7 @@ function Nombres() {
 	}
 //-->
 </script>
-<form action="../Procesos/PTarjeta.jsp" method="post" name="AgregarTarjetaCredito">
+<form action="../Procesos/AgregarTarjetaCreditoP.jsp" method="post" name="AgregarTarjetaCredito">
 <label>Id de la Tarjeta de Credito:</label><input type="text" name="id" onkeypress="Numeros()"><br>
 <label>Nombre de la tarjeta de credito:<input type="text" size=45 name="nombre" onkeypress="Nombres()"><br>
 <label>Limite Minimo de Credito de la Tarjeta :</label><input type="text" size=10 name="limMin"> <br>
