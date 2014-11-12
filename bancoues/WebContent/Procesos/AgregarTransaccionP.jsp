@@ -15,10 +15,10 @@ String idtran=request.getParameter("idtransaccion");
 String fechatran=request.getParameter("fechat");
 String fechapli=request.getParameter("fechap");
 String monto=request.getParameter("monto");
-String  concepto=request.getParameter("concepto");
-String  cliente=request.getParameter("cliente");
-String  pais=request.getParameter("pais");
-String  tarjeta=request.getParameter("tarjeta");
+Concepto concepto=request.getParameter("idConcepto");
+String  cliente=request.getParameter("idCliente");
+Pais  pais=request.getParameter("idPais");
+String  tarjeta=request.getParameter("idtarjetaCredito");
 String  fechal=request.getParameter("fechal");
 String tipo=request.getParameter("tipo");
 Integer id=Integer.parseInt(idtran);
@@ -51,6 +51,9 @@ tran.setIdTransaccion(id);
 tran.setFechaTransaccion(data1);
 tran.setFechaAplicada(data2);
 tran.setMonoTransaccion(mon);
+tran.setPais(pais);
+tran.setConcepto(concepto);
+
 String lol="c";
 
 if(  tipo == lol)
