@@ -28,9 +28,6 @@ for (int i=0;i<lista.size();i++)
 <tr> 
 <td><%=lista.get(i).getIdConcepto() %></td> 
 <td><%=lista.get(i).getDescripcion() %></td> 
-
-
-
 </tr>
 <%} 
 %>
