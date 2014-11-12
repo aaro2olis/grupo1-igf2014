@@ -83,30 +83,32 @@ function Nombres() {
 					 	<div id="divname"> 
 					 	Agregar trasaccion
 					 	</div>
-
-						<form action="../Procesos/AgregarTransaccionP.jsp" name="f" method="post">
+					 	
+						<form action="" name="f">
 						<table>
   							<tr>
 								<td><label>Id Transaccion</label></td>
-								<td><input type="text" name="idtransaccion"><br>
+								<td><input type="text" name="idtransaccion"></td>
 							</tr>
 							<tr>
-								<td><label>Fecha de transaccion</label></td>
-								<td> <input type="date" name="fechat"><br>
+							   <td><label>Fecha de transaccion</label></td>
+								<td> <input type="date" name="fechatrans"></td>
 							</tr>
 							<tr>
-								<td><label>Fecha Aplicada</label></td>
-								<td> <input type="date" name="fechap"><br>
+							   <td><label>Fecha Aplicada</label></td>
+								<td> <input type="date" name="fechaplic"></td>
 							</tr>
 							<tr>
-								<td><label>Monto de transaccion</label></td>
-								<td> <input type="text" name="monto"><br>
-							</tr><%
+							   <td><label>Monto de transaccion</label></td>
+								<td> <input type="text" name="monto"></td>
+							</tr>
+							<tr>
+								<%
 									List<Concepto> Lconcepto = Beans.getConsultas().getListaConcepto();
 									System.out.println( Lconcepto.size());
 								%>
 								<td><label>idConcepto :</label></td>
-								<td> <select name='idConcepto'>
+								<td><select name='idConcepto'>
 									<%
 										for (int i = 0; i <Lconcepto.size(); i++) {
 											System.out.println(i);
@@ -114,7 +116,7 @@ function Nombres() {
 						
 										} // fin while 
 										out.println("</SELECT>");
-									%></td>
+									%> </td>
 							</tr>
 							<tr>
 									<%
@@ -137,7 +139,7 @@ function Nombres() {
 										List<Cliente> Lcliente = Beans.getConsultas().getListaCliente();
 										System.out.println( Lcliente.size());
 									%>
-						 		<td><label>IdClienteTarjeta :</label></td>
+						 		<td><label>Id Cliente Tarjeta :</label></td>
 								<td><select name='idCliente'>
 									<%
 										for (int i = 0; i < Lcliente.size(); i++) {
@@ -146,15 +148,15 @@ function Nombres() {
 						
 										} // fin while 
 										out.println("</SELECT>");
-									%></td>
+									%> </td>
 							</tr>
-							<tr>	<%
+							<tr>
+									<%
 										List<ClientetarjetaestadoId> LclientetarjetaEstadoId = Beans.getConsultas().getListaClienteTarjetaEstadoId();
 										System.out.println( LclientetarjetaEstadoId.size());
 									%>
-									
-								<td><label>fechaLimitePago</label></td>
-								<td><select name='idClientetarjetaEstId'>
+								<td><label>Fecha Limite de Pago </label></td>
+								<td> <select name='idClientetarjetaEstId'>
 									<%
 										for (int i = 0; i < LclientetarjetaEstadoId.size(); i++) {
 											System.out.println(i);
@@ -165,6 +167,7 @@ function Nombres() {
 									%> </td>
 							</tr>
 							<tr>
+							
 									 <%
 										List<Pais> LPais = Beans.getConsultas().getListaPais();
 										System.out.println( LPais.size());
@@ -184,11 +187,11 @@ function Nombres() {
 								<td><label>Tipo de transaccion: </label></td>
 								<td><input type="radio" name="tipo" value="c">Cargo<br>
 						    		<input type="radio" name="tipo" value="a">Abono</td>
-							</tr>
-							<tr>
-								<td><input type="button" value="Guardar"  class="boton" onclick="validar()"> </td>
-								<td><input type="reset" value="Restablecer" class="boton"></td>
-							</tr>
+						    </tr>
+						    <tr>
+						    	<td><input type="button" value="Guardar"  class="boton" onclick="validar()"></td>
+						    	<td><input type="reset" value="Restablecer" class="boton"></td>
+						    </tr>
 						</table>
 						</form>
 			</article>
@@ -202,4 +205,5 @@ function Nombres() {
 		</footer>
 	</div>
 </body>
+</html>
 </html>
