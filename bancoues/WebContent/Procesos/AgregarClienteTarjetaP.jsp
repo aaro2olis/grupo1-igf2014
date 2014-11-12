@@ -10,15 +10,12 @@
 <%! String mensaje = "" ; %>
 <%
 boolean estado=true;
-int id=Integer.parseInt(request.getParameter("id"));
-String nombre=request.getParameter("nombre");
-BigDecimal min=new BigDecimal(request.getParameter("limMin"));
-BigDecimal max=new BigDecimal(request.getParameter("limMax"));
+Cliente idcliente=request.getParameter("idCliente");
+ClientetarjetaId idtarjetacredito=request.getParameter("idtarjetaCredito");
+BigDecimal limit=new BigDecimal(request.getParameter("limite"));
 String fecha=request.getParameter("fecha");
-String nombree=request.getParameter("nEmisor");
-BigDecimal tasa=new BigDecimal(request.getParameter("tasa"));
-String telefono=request.getParameter("telefono");
-
+String puntos=request.getParameter("puntos");
+Integer punt=Integer.parseInt(puntos);
 
 SimpleDateFormat simple= new SimpleDateFormat("dd/MM/yyyy"); 
 Date data = null;
@@ -30,18 +27,18 @@ mensaje="fecha no valida";
 //break;
 }  
 if(estado){
-System.out.println(min);
-System.out.println(max);
+System.out.println(idcliente);
+System.out.println(idtarjetacredito);
 System.out.println(data);
-Tarjetacredito tar=new Tarjetacredito();
-tar.setIdTarjetaCredito(id);
-tar.setFechaIngreso(data);
-tar.setLimiteCreditoMax(max);
-tar.setNombreTarjeta(nombre);
-tar.setLimiteCreditoMin(min);
-tar.setTasaInteres(tasa);
-tar.setNombreEmisor(nombree);
-mensaje=Beans.getControl().AgregarTarjeta(tar);
+System.out.println(limit);
+System.out.println(punt);
+Clientetarjeta clientar=new Clientetarjeta();
+clientar.setFechaEmision(data);
+clientar.setLimiteCredito(limit);
+clientar.setPuntosTarjeta(punt);
+clientar.setCliente(idcliente);
+clientar.setId(idtarjetacredito);
+mensaje=Beans.getControl().agregarClienteTarjeta(clientar);
 
 }
 

@@ -25,6 +25,7 @@ Integer id=Integer.parseInt(idtran);
 BigDecimal mon=new BigDecimal(monto);
 
 
+
 SimpleDateFormat simple= new SimpleDateFormat("dd/MM/yyyy"); 
 Date data1 = null;
 Date data2 = null;

@@ -10,9 +10,13 @@
 <%! String mensaje = "" ; %>
  <%
 boolean estado=true;
+String idcli=request.getParameter("idCliente");
+String idtarcre=request.getParameter("idtarejetacredito");
+String refe=request.getParameter("refe");
 String fecha=request.getParameter("fecha");
 String balance=request.getParameter("balance");
 SimpleDateFormat simple= new SimpleDateFormat("dd/MM/yyyy"); 
+BigDecimal bal= new BigDecimal(balance);
 Date data = null;
 try {
     data = simple.parse(fecha);
@@ -23,8 +27,13 @@ mensaje="fecha no valida";
 }  
 if(estado){
 System.out.println(data);
-System.out.println(balance);
+System.out.println(bal);
+System.out.println(refe);
+System.out.println(idcli);
+System.out.println(idtarcre);
 Clientetarjetaestado cte=new Clientetarjetaestado();
+cte.setBalanceActual(bal);
+
 
 mensaje=Beans.getControl().Agregar;
 
