@@ -1,12 +1,9 @@
-<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="css/menuleft.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="css/menuup.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="css/element.css" media="screen" />
-  <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
      <%@ page import="dao.*" %>
  <%@ page import="dominio.*" %>
  <%@ page import="negocio.*" %>
+  <%@ page import="java.util.*" %>
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -64,18 +61,80 @@ function Nombres() {
 <title>Agregar Transaccion</title>
 </head>
 <body>
-<form action="../Procesos/AgregarTransaccionP.jsp" name="f" method="post">
-Agregar Trasaccion <br><br>
+<form action="" name="f">
+Agregar Trasaccion <br>
 
-<label>Id Transaccion:</label><input type="text" name="idtransaccion"><br>
-<label>Fecha de transaccion</label> <input type="date" name="fechat"><br>
-<label>Fecha Aplicada</label> <input type="date" name="fechap"><br>
-<label>Monto de transaccion</label> <input type="text" name="monto"><br>
-<label>idconcepto</label> <input type="text" name="concepto"><br>
-<label>idcliente</label> <input type="text" name="cliente"><br>
-<label>idpais</label> <input type="text" name="pais"><br>
-<label>idtarjetacredito</label> <input type="text" name="tarjeta"><br>
-<label>fecha limite de pago</label> <input type="date" name="fechal"><br>
+Id Transaccion <input type="text" name="idtransaccion"><br>
+Fecha de transaccion <input type="date" name="fechatrans"><br>
+Fecha Aplicada <input type="date" name="fechaplic"><br>
+Monto de transaccion <input type="text" name="monto"><br>
+ <%
+		List<Concepto> Lconcepto = Beans.getConsultas().getListaConcepto();
+		System.out.println( Lconcepto.size());
+	%>
+idConcepto :<select name='idConcepto'>
+			<%
+				for (int i = 0; i <Lconcepto.size(); i++) {
+					System.out.println(i);
+					out.println("<option value=" +Lconcepto.get(i).getIdConcepto() + "> " +  Lconcepto.get(0).getDescripcion()  + " </option>");
+
+				} // fin while 
+				out.println("</SELECT>");
+			%> <br>
+			<%
+		List<Tarjetacredito> LtarjetaCredito = Beans.getConsultas().getListaTarjetaCredito();
+		System.out.println( LtarjetaCredito.size());
+	%>
+idTarjetaCredito :<select name='idTarjetadeCredito'>
+			<%
+				for (int i = 0; i <LtarjetaCredito.size(); i++) {
+					System.out.println(i);
+					out.println("<option value=" +LtarjetaCredito.get(i).getIdTarjetaCredito() + "> " +  LtarjetaCredito.get(i).getNombreTarjeta()  + " </option>");
+
+				} // fin while 
+				out.println("</SELECT>");
+			%> <br>
+			 <%
+		List<Cliente> Lcliente = Beans.getConsultas().getListaCliente();
+		System.out.println( Lcliente.size());
+	%>
+ 
+ IdClienteTarjeta :<select name='idCliente'>
+			<%
+				for (int i = 0; i < Lcliente.size(); i++) {
+					System.out.println(i);
+					out.println("<option value=" + Lcliente.get(i).getIdCliente() + "> " +  Lcliente.get(i).getIdCliente()  + " </option>");
+
+				} // fin while 
+				out.println("</SELECT>");
+			%> <br>
+					 <%
+		List<ClientetarjetaestadoId> LclientetarjetaEstadoId = Beans.getConsultas().getListaClienteTarjetaEstadoId();
+		System.out.println( LclientetarjetaEstadoId.size());
+	%>
+			
+fechaLimitePago = <select name='idClientetarjetaEstId'>
+			<%
+				for (int i = 0; i < LclientetarjetaEstadoId.size(); i++) {
+					System.out.println(i);
+					out.println("<option value=" + LclientetarjetaEstadoId.get(i).getFechaLimtePago() + "> " +  LclientetarjetaEstadoId.get(i).getFechaLimtePago()  + " </option>");
+
+				} // fin while 
+				out.println("</SELECT>");
+			%> <br>
+			 <%
+		List<Pais> LPais = Beans.getConsultas().getListaPais();
+		System.out.println( LPais.size());
+	%>
+IPais :<select name='idPais'>
+<%
+				for (int i = 0; i <  LPais.size(); i++) {
+					System.out.println(i);
+					out.println("<option value=" +  LPais.get(i).getIdPais() + "> " +   LPais.get(i).getNombrePais() + " </option>");
+
+				} // fin while 
+				out.println("</SELECT>");
+			%> <br>
 <label>Tipo de transaccion: </label><br>
 	<input type="radio" name="tipo" value="c">Cargo<br>
     <input type="radio" name="tipo" value="a">Abono<br>
