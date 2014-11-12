@@ -3,6 +3,7 @@
     <%@ page import="dao.*" %>
  <%@ page import="dominio.*" %>
  <%@ page import="negocio.*" %>
+  <%@ page import="java.util.*" %>
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -39,47 +40,46 @@ function Nombres() {
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Agregar Cliente Tarjeta Estado</title>
- <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/menuleft.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/menuup.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/element.css" media="screen" />
-  </head>
-<!--[if IE]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]--><body>
-  		<div id="wrapper">
-      		<header>
-    			<div id="logo"></div>
-    			<h1>&nbsp;</h1>    		
-            	<nav>
-        			<div id="cssmenu">
-        			</div>
-        			</nav>
-    		</header>
-			<section>
-			 <article style="margin-left:15%;">
-					 	<div id="divname"> 
-					 	 Agregar Cliente Tarjeta Estado
-					 	  </div>
-						 <form action="" name="f">
-						 
-						<br>
-						 
-						 Fecha limite de pago <input type="date" name="fecha"><br>
-						 Balance Actual <input type="text"  name="balance"><br>
-						 
-						 <input type="button" value="Guardar" class="boton" onclick="validar()">
-						 <input type="reset" value="Restablecer" class="boton" >
-						 </form>
-			</article>
-			</section>
-			<footer>
-				<br />
-				<ul>
-					<li><a href='index.html'><img src="img/help1.png" onmouseover="this.src='img/help2.png';" onmouseout="this.src='img/help1.png';" name="Ayuda" /></a></li>
-					<li><a href='index.html'><img src="img/email1.png" onmouseover="this.src='img/email2.png';" onmouseout="this.src='img/email1.png';" name="Ayuda"/></a></li>
-				</ul>		
-			</footer>
-		</div>
-	</body>
+</head>
+<body>
+ <form action="" name="f">
+ 
+ Agregar Cliente Tarjeta Estado<br>
+ <%
+		List<Tarjetacredito> LtarjetaCredito = Beans.getConsultas().getListaTarjetaCredito();
+		System.out.println( LtarjetaCredito.size());
+	%>
+ 
+ id tarjeta credito :<select name='idtarjetaCredito'>
+			<%
+				for (int i = 0; i < LtarjetaCredito.size(); i++) {
+					System.out.println(i);
+					out.println("<option value=" + LtarjetaCredito.get(i).getIdTarjetaCredito() + "> " +  LtarjetaCredito.get(i).getNombreTarjeta()  + " </option>");
+
+				} // fin while 
+				out.println("</SELECT>");
+			%> 
+			
+			 <%
+		List<Cliente> Lcliente = Beans.getConsultas().getListaCliente();
+		System.out.println( Lcliente.size());
+	%>
+			<br>
+IdClienteTarjeta :<select name='idCliente'>
+			<%
+				for (int i = 0; i < Lcliente.size(); i++) {
+					System.out.println(i);
+					out.println("<option value=" + Lcliente.get(i).getIdCliente() + "> " +  Lcliente.get(i).getIdCliente()  + " </option>");
+
+				} // fin while 
+				out.println("</SELECT>");
+			%> <br>
+
+ Fecha limite de pago <input type="date" name="fecha"><br>
+ Balance Actual <input type="text"  name="balance"><br>
+ 
+ <input type="button" value="Guardar" class="boton" onclick="validar()">
+ <input type="reset" value="Restablecer" class="boton" >
+ </form>
+</body>
 </html>

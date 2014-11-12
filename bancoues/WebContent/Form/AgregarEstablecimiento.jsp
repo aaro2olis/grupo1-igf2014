@@ -1,7 +1,3 @@
-<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="css/menuleft.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="css/menuup.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="css/element.css" media="screen" />
 <script type="text/javascript">
 <!--
 function validar() // java script function is created
@@ -42,7 +38,7 @@ function Numeros() {
 	}
 //-->
 </script>
-<form action="../Procesos/AgregarEstablecimientoP.jsp" method="post" name="AgregaEstablecimiento">
+<form action="" method="post" name="AgregaEstablecimiento">
 <label>Numero de referencia:</label><input type="text" name="id" onkeypress="Numeros()"><br>
 <label>Establecimiento:</label><br><input type="text" name="Establecimiento" size=35><br>
 <label>Domicilio:</label><br><input type="text" size=45 name="domicilio"><br>
