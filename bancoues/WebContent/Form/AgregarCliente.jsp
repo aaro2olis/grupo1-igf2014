@@ -115,7 +115,8 @@ function fecha()
   </head>
 <!--[if IE]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]--><body>
+    <![endif]-->
+    <body>
   		<div id="wrapper">
       		<header>
     			<div id="logo"></div>
@@ -131,16 +132,34 @@ function fecha()
 					 	Cliente
 					 	</div>
 					<form method="post" name="frmcliente" action="../Procesos/AgregarClienteP.jsp">
-					
-					
-					
-						<label for="id">IDCliente</label> <input type="text" name="id" /></br> <label>Nombres:</label>
-						<input type="text" name="nombre" /></br> <label>Apellidos:</label> <input
-							type="text" name="apellido" /></br> <label>Direccion: </label> <input
-							type="text" name="direccion" /></br> <label>telefono</label> <input
-							type="text" name="telefono" /></br> <label>fecha nacimiento</label><input
-							type="date" name="fecha" /></br> <label>Email</label> <input type="text"
-							name="email" /></br>
+					<table>
+  							<tr>
+								<td><label for="id">IDCliente</label></td>
+								<td><input type="text" name="id" /></td>
+							</tr>
+							<tr>
+							   <td><label>Nombres:</label></td>
+								<td><input type="text" name="nombre" /></td>
+							</tr>
+							<tr>
+								<td> <label>Apellidos:</label></td>
+								<td> <input type="text" name="apellido" /></td>
+							</tr>
+							<tr>
+								<td><label>Direccion: </label></td>
+								<td><input type="text" name="direccion" /></td>
+							</tr>
+							<tr>
+								<td><label>telefono</label></td>
+								<td><input	type="text" name="telefono" /></td>
+							</tr>
+							<tr>
+								<td><label>fecha nacimiento</label></td>
+								<td><input	type="date" name="fecha" /></td>
+							</tr>
+							<tr>
+								<td><label>Email</label></td>
+								<td><input type="text" 	name="email" /></br>
 
 
 							<%
@@ -149,9 +168,10 @@ function fecha()
 								System.out.println(tipos.size());
 							%>
 						
-							<p>Tipo
-							<p>
-								<select name='tipo'>
+							</tr>
+							<tr>
+								<td><label>Tipo</label></td>
+								<td><select name='tipo'>
 									<%
 										for (int i = 0; i < tipos.size(); i++) {
 											System.out.println(i);
@@ -160,17 +180,21 @@ function fecha()
 						
 										} // fin while 
 										out.println("</SELECT>");
-									%>
-									<input type="button" value="Guardar" class="boton" onclick="validar()"/>
-									<input type="reset" value="Restablecer" class="boton" />
-						</form>
-						</article>
+									%></td>
+							</tr>
+							<tr>
+								<td><input type="button" value="Guardar" class="boton" onclick="validar()"/></td>
+								<td><input type="reset" value="Restablecer" class="boton" /></td>
+							</tr>
+						</table>
+					</form>
+				</article>
 			</section>
 			<footer>
 				<br />
 				<ul>
-					<li><a href='index.html'><img src="img/help1.png" onmouseover="this.src='img/help2.png';" onmouseout="this.src='img/help1.png';" name="Ayuda" /></a></li>
-					<li><a href='index.html'><img src="img/email1.png" onmouseover="this.src='img/email2.png';" onmouseout="this.src='img/email1.png';" name="Ayuda"/></a></li>
+					<li><a href='index.html'><img src="../img/help1.png" onmouseover="this.src='../img/help2.png';" onmouseout="this.src='../img/help1.png';" name="Ayuda" /></a></li>
+					<li><a href='index.html'><img src="../img/email1.png" onmouseover="this.src='../img/email2.png';" onmouseout="this.src='../img/email1.png';" name="Ayuda"/></a></li>
 				</ul>		
 			</footer>
 		</div>

@@ -1,7 +1,14 @@
-<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="css/menuleft.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="css/menuup.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="css/element.css" media="screen" />
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	 <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
+	  <link rel="stylesheet" type="text/css" href="../css/menuleft.css" media="screen" />
+	  <link rel="stylesheet" type="text/css" href="../css/menuup.css" media="screen" />
+	  <link rel="stylesheet" type="text/css" href="../css/element.css" media="screen" />
+	<title>Banco Ues -Agregar tarjeta de credito </title>
 <script type="text/javascript">
 <!--
 function validar() // java script function is created
@@ -55,15 +62,71 @@ function Nombres() {
 	  event.returnValue = false;
 	}
 //-->
+
 </script>
-<form action="../Procesos/AgregarTarjetaCreditoP.jsp" method="post" name="AgregarTarjetaCredito">
-<label>Id de la Tarjeta de Credito:</label><input type="text" name="id" onkeypress="Numeros()"><br>
-<label>Nombre de la tarjeta de credito:<input type="text" size=45 name="nombre" onkeypress="Nombres()"><br>
-<label>Limite Minimo de Credito de la Tarjeta :</label><input type="text" size=10 name="limMin"> <br>
-<label>Limite Maximo de Credito de la Tarjeta :</label><input type="text" size=10 name="limMax"> <br>
-<label>Fecha de Ingreso:</label> <input type="date" name="fecha" /></br>
-<label>Nombre del emisor:</label> <input type="text" name="nEmisor" size=45 onkeypress="Nombres()"/></br>
-<label>Tasa de interes:</label> <input type="text" name="tasa" size=10 onkeypress="Numeros()"/></br> 
-<input type="submit" value="Guardar" class="boton" onclick="validar()" /> 
-<input type="reset" value="Restablecer" class="boton" />
-</form>
+</head>
+<!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><body>
+  		<div id="wrapper">
+      		<header>
+    			<div id="logo"></div>
+    			<h1>&nbsp;</h1>    		
+            	<nav>
+        			<div id="cssmenu">
+        			</div>
+        			</nav>
+    		</header>
+			<section>
+			<article style="margin-left:15%;">
+					 	<div id="divname"> 
+					 	Agregar tarjeta de credito
+					 	</div>
+						<form action="../Procesos/AgregarTarjetaCreditoP.jsp" method="post" name="AgregarTarjetaCredito">
+						<table>
+  							<tr>
+								<td><label>Id de la Tarjeta de Credito:</label></td>
+								<td><input type="text" name="id" onkeypress="Numeros()"></td>
+							</tr>
+							<tr>
+							   <td><label>Nombre de la tarjeta de credito:</label></td>
+								<td><input type="text" size=45 name="nombre" onkeypress="Nombres()"></td>
+							</tr>
+							<tr>
+							   <td><label>Limite Minimo de Credito de la Tarjeta :</label></td>
+								<td><input type="text" size=10 name="limMin"></td>
+							</tr>
+							<tr>
+							   <td><label>Limite Maximo de Credito de la Tarjeta :</label></td>
+								<td><input type="text" size=10 name="limMax"></td>
+							</tr>
+							<tr>
+							   <td><label>Fecha de Ingreso:</label></td>
+								<td> <input type="date" name="fecha" /></td>
+							</tr>
+							<tr>
+							   <td><label>Nombre del emisor:</label></td>
+								<td> <input type="text" name="nEmisor" size=45 onkeypress="Nombres()"/></td>
+							</tr>
+							<tr>
+							   <td><label>Tasa de interes:</label></td>
+								<td> <input type="text" name="tasa" size=10 onkeypress="Numeros()"/></br></td>
+							</tr>
+							<tr>
+							   <td><input type="submit" value="Guardar" class="boton" onclick="validar()" /></td>
+							   <td><input type="reset" value="Restablecer" class="boton" /></td>
+							</tr>
+						</table>
+					</form>
+					</article>
+		</section>
+		<footer>
+			<br />
+		<ul>
+					<li><a href='index.html'><img src="../img/help1.png" onmouseover="this.src='../img/help2.png';" onmouseout="this.src='../img/help1.png';" name="Ayuda" /></a></li>
+					<li><a href='index.html'><img src="../img/email1.png" onmouseover="this.src='../img/email2.png';" onmouseout="this.src='../img/email1.png';" name="Ayuda"/></a></li>
+				</ul>	
+		</footer>
+	</div>
+</body>
+</html>

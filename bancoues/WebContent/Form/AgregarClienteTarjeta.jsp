@@ -54,44 +54,93 @@ function Nombres() {
 //-->
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Agregar Cliente Tarjeta</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="css/menuleft.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="css/menuup.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="css/element.css" media="screen" />
+<title>Banco Ues - Agregar Cliente Tarjeta</title>
 </head>
-<body>
- <form action="../Procesos/AgregarClienteTarjetaP.jsp" name="f" method="post">
- Agregar cliente Tarjeta <br>
- <%
-		List<Cliente> Lcliente = Beans.getConsultas().getListaCliente();
-		System.out.println( Lcliente.size());
-	%>
- 
- IdClienteTarjeta :<select name='idCliente'>
-			<%
-				for (int i = 0; i < Lcliente.size(); i++) {
-					System.out.println(i);
-					out.println("<option value=" + Lcliente.get(i).getIdCliente() + "> " +  Lcliente.get(i).getIdCliente()  + " </option>");
-
-				} // fin while 
-				out.println("</SELECT>");
-			%> <br>
-			<%
-		List<Tarjetacredito> LtarjetaCredito = Beans.getConsultas().getListaTarjetaCredito();
-		System.out.println( LtarjetaCredito.size());
-	%>
-IdTarjeta de Credito :<select name='idtarjetaCredito'>
-			<%
-				for (int i = 0; i < LtarjetaCredito.size(); i++) {
-					System.out.println(i);
-					out.println("<option value=" + LtarjetaCredito.get(i).getIdTarjetaCredito() + "> " +  LtarjetaCredito.get(i).getNombreTarjeta()  + " </option>");
-
-				} // fin while 
-				out.println("</SELECT>");
-			%> <br>
- Fecha de emision :<input type="date" name="fecha"> <br>
- Limite de credito :<input type="text" name="limite"> <br>
- Puntos tarjeta : <input type="text" name="puntos"><br>
- 
- <input type="button" class="boton"  value="Guardar" onclick="validar()">
- <input type="reset" class="boton" value="Restablecer">
- </form>
+<!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><body>
+  		<div id="wrapper">
+      		<header>
+    			<div id="logo"></div>
+    			<h1>&nbsp;</h1>    		
+            	<nav>
+        			<div id="cssmenu">
+        			</div>
+        			</nav>
+    		</header>
+			<section>
+			<article style="margin-left:15%;">
+					 	<div id="divname"> 
+    				 		Banco Ues - Agregar Cliente Tarjeta
+					    </div>
+						 <form action="../Procesos/AgregarClienteTarjetaP.jsp" name="f" method="post">
+						 
+						<table>
+  							<tr>
+								<%
+											List<Cliente> Lcliente = Beans.getConsultas().getListaCliente();
+											System.out.println( Lcliente.size());
+								%>
+								<td><label>IdClienteTarjeta :</label></td>
+								<td><select name='idCliente'>
+									<%
+										for (int i = 0; i < Lcliente.size(); i++) {
+											System.out.println(i);
+											out.println("<option value=" + Lcliente.get(i).getIdCliente() + "> " +  Lcliente.get(i).getIdCliente()  + " </option>");
+						
+										} // fin while 
+										out.println("</SELECT>");
+									%> </td>
+							</tr>
+							<tr>
+									<%
+								List<Tarjetacredito> LtarjetaCredito = Beans.getConsultas().getListaTarjetaCredito();
+								System.out.println( LtarjetaCredito.size());
+								%>
+								<td><label>IdTarjeta de Credito :</label></td>
+								<td><select name='idtarjetaCredito'>
+									<%
+										for (int i = 0; i < LtarjetaCredito.size(); i++) {
+											System.out.println(i);
+											out.println("<option value=" + LtarjetaCredito.get(i).getIdTarjetaCredito() + "> " +  LtarjetaCredito.get(i).getNombreTarjeta()  + " </option>");
+						
+										} // fin while 
+										out.println("</SELECT>");
+									%> </td>
+							</tr>
+							<tr>
+								<td><label> Fecha de emision :</label></td>
+								<td><input type="date" name="fecha"> </td>
+							</tr>
+							<tr>
+								<td><label>Limite de credito :</label></td>
+								<td>input type="text" name="limite"> </td>
+							</tr>
+							<tr>
+								<td><label>Puntos tarjeta : </label></td>
+								<td><input type="text" name="puntos"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="boton"  value="Guardar" onclick="validar()"></td>
+								<td><input type="reset" class="boton" value="Restablecer"></td>
+							</tr>
+						</table>
+					</form>
+			</article>
+		</section>
+		<footer>
+			<br />
+			<ul>
+					<li><a href='index.html'><img src="../img/help1.png" onmouseover="this.src='../img/help2.png';" onmouseout="this.src='../img/help1.png';" name="Ayuda" /></a></li>
+					<li><a href='index.html'><img src="../img/email1.png" onmouseover="this.src='../img/email2.png';" onmouseout="this.src='../img/email1.png';" name="Ayuda"/></a></li>
+				</ul>		
+		</footer>
+	</div>
 </body>
 </html>

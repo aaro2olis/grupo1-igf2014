@@ -39,47 +39,94 @@ function Nombres() {
 //-->
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Agregar Cliente Tarjeta Estado</title>
+<title>Banco Ues - Agregar Cliente Tarjeta Estado</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="../css/menuleft.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="../css/menuup.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="../css/element.css" media="screen" />
 </head>
-<body>
- <form action="../Procesos/AgregarClienteEstadoP.jsp" name="f" method="post">
- 
- Agregar Cliente Tarjeta Estado<br>
- <%
-		List<Tarjetacredito> LtarjetaCredito = Beans.getConsultas().getListaTarjetaCredito();
-		System.out.println( LtarjetaCredito.size());
-	%>
- 
- id tarjeta credito :<select name='idtarjetaCredito'>
-			<%
-				for (int i = 0; i < LtarjetaCredito.size(); i++) {
-					System.out.println(i);
-					out.println("<option value=" + LtarjetaCredito.get(i).getIdTarjetaCredito() + "> " +  LtarjetaCredito.get(i).getNombreTarjeta()  + " </option>");
-
-				} // fin while 
-				out.println("</SELECT>");
-			%> 
-			
-			 <%
-		List<Cliente> Lcliente = Beans.getConsultas().getListaCliente();
-		System.out.println( Lcliente.size());
-	%>
-			<br>
-IdClienteTarjeta :<select name='idCliente'>
-			<%
-				for (int i = 0; i < Lcliente.size(); i++) {
-					System.out.println(i);
-					out.println("<option value=" + Lcliente.get(i).getIdCliente() + "> " +  Lcliente.get(i).getIdCliente()  + " </option>");
-
-				} // fin while 
-				out.println("</SELECT>");
-			%> <br>
-
- Fecha limite de pago <input type="date" name="fecha"><br>
- Balance Actual <input type="text"  name="balance"><br>
- Numero de referencia <input type="text"  name="refe"><br>
- <input type="button" value="Guardar" class="boton" onclick="validar()">
- <input type="reset" value="Restablecer" class="boton" >
- </form>
+<!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><body>
+  		<div id="wrapper">
+      		<header>
+    			<div id="logo"></div>
+    			<h1>&nbsp;</h1>    		
+            	<nav>
+        			<div id="cssmenu">
+        			</div>
+        			</nav>
+    		</header>
+			<section>
+			<article style="margin-left:15%;">
+					 	<div id="divname"> 
+					 	Agregar Cliente Tarjeta estado
+					 	</div>
+						 <form action="../Procesos/AgregarClienteEstadoP.jsp" name="f" method="post">
+						 
+						<table>
+  							<tr>
+								
+								<%
+										List<Tarjetacredito> LtarjetaCredito = Beans.getConsultas().getListaTarjetaCredito();
+										System.out.println( LtarjetaCredito.size());
+								%>
+						 
+							 	id tarjeta credito :</label></td>
+								<td><select name='idtarjetaCredito'>
+									<%
+										for (int i = 0; i < LtarjetaCredito.size(); i++) {
+											System.out.println(i);
+											out.println("<option value=" + LtarjetaCredito.get(i).getIdTarjetaCredito() + "> " +  LtarjetaCredito.get(i).getNombreTarjeta()  + " </option>");
+						
+										} // fin while 
+										out.println("</SELECT>");
+									%> </td>
+							</tr>
+							<tr>
+								<%
+									List<Cliente> Lcliente = Beans.getConsultas().getListaCliente();
+									System.out.println( Lcliente.size());
+								%>
+								<td><label>IdClienteTarjeta :</label></td>
+								<td><select name='idCliente'>
+									<%
+										for (int i = 0; i < Lcliente.size(); i++) {
+											System.out.println(i);
+											out.println("<option value=" + Lcliente.get(i).getIdCliente() + "> " +  Lcliente.get(i).getIdCliente()  + " </option>");
+						
+										} // fin while 
+										out.println("</SELECT>");
+									%> </td>
+							</tr>
+							<tr>
+								<td><label>Fecha limite de pago</label></td>
+								<td><input type="date" name="fecha"></td>
+							</tr>
+							<tr>
+								<td><label>Balance Actual</label></td>
+								<td><input type="text"  name="balance"></td>
+							</tr>
+							<tr>
+								<td><label>Numero de referencia</label></td>
+								<td><input type="text"  name="refe"></td>
+							</tr>
+							<tr>
+								<td><input type="button" value="Guardar" class="boton" onclick="validar()"></td>
+						 		<td><input type="reset" value="Restablecer" class="boton" ></td>
+						 	</tr>
+						 </table>
+					</form>
+			</article>
+		</section>
+		<footer>
+			<br />
+			<ul>
+					<li><a href='index.html'><img src="../img/help1.png" onmouseover="this.src='../img/help2.png';" onmouseout="this.src='../img/help1.png';" name="Ayuda" /></a></li>
+					<li><a href='index.html'><img src="../img/email1.png" onmouseover="this.src='../img/email2.png';" onmouseout="this.src='../img/email1.png';" name="Ayuda"/></a></li>
+				</ul>		
+		</footer>
+	</div>
 </body>
 </html>
