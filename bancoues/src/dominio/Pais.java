@@ -60,16 +60,17 @@ public class Pais  implements java.io.Serializable {
     public void setNombrePais(String nombrePais) {
         this.nombrePais = nombrePais;
     }
-//@OneToMany(fetch=FetchType.LAZY, mappedBy="pais")
- /*  public Set getTransaccions() {
+    /*
+@OneToMany(fetch=FetchType.LAZY, mappedBy="pais")
+  public Set getTransaccions() {
         return this.transaccions;
     }
     
     public void setTransaccions(Set transaccions) {
         this.transaccions = transaccions;
     }
-
 */
+
 
 
 }

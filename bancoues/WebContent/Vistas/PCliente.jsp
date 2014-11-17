@@ -17,6 +17,9 @@ Cliente cliente=Beans.getConsultas().getCliente(id);
 
 %>
 <p>Cliente:<%=cliente.getNombClient()+ " " + cliente.getApellidoClient() %></p>
-<p></p>
+
+<p><a href="#">editar datos</a> </p>
+<p><a href="#">ver tarjetas </a> </p>
+<p><a href="#">ver trasacciones</a> </p>
 </body>
 </html>
